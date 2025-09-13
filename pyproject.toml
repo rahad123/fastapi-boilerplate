@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "fastapi-template"
+version = "0.1.0"
+description = "A template for quickly creating web applications with the FastAPI framework."
+authors = ["Shidul Islam Rahad"]
+license = "ISC"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.111.0"
+pydantic = "^2.7.1"
+uvicorn = "^0.29.0"
+httpx = "^0.27.0"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+flake8 = "^7.0.0"
+autopep8 = "^2.1.0"
+pylint = "^3.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+format = "find ./src -name '*.py' -exec poetry run autopep8 --in-place --aggressive --aggressive {} +"
+format_test = "find ./tests -name '*.py' -exec poetry run autopep8 --in-place --aggressive --aggressive {} +"
+
